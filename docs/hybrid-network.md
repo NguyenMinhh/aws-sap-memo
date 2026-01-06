@@ -1,8 +1,10 @@
 ## VPC Peering (Not for Hybrid - only trong nội bộ AWS)
 
-・VPC-to-VPC connection (không phải hybrid networking)
+・VPC-to-VPC connectivity only (không dùng cho on-prem ↔ AWS, không phải hybrid networking)
 
-・KHÔNG transitive → dùng Transit Gateway thay thế
+・KHÔNG hỗ trợ transitive routing → dùng Transit Gateway thay thế
+
+・Peer-to-peer, không scale tốt → phù hợp few VPCs, kiến trúc đơn giản
 
 【KEYWORDS】
 
@@ -230,3 +232,24 @@ On-prem / User cần kết nối AWS?
                                                               |
                                                         Multiple VPCs
                                                     (multi-account / multi-region)
+
+```
+## 🚀 Answer-Selection Checklist:
+Bước 1: Đọc câu hỏi → Scan keywords
++ "remote user" → Client VPN
++ "quick setup" → Site-to-Site VPN
++ "branch-to-branch" → VPN CloudHub
++ "> 1.25 Gbps" → Direct Connect
++ "transitive" → Transit Gateway
++ "multi-region DX" → DX Gateway + TGW
+
+Bước 2: Check số lượng (sites/VPCs/regions)
++ 1 site, 1 VPC → VGW
++ 1 site, nhiều VPC → TGW
++ Nhiều site, no branch-to-branch → TGW
++ Nhiều site, branch-to-branch → VPN CloudHub
+
+Bước 3: Loại trừ đáp án sai
++ "Transitive routing" + "VPC Peering" → SAI
++ "Multi-region" + "DX Gateway + VGW" → SAI (same region only)
++ "> 2 Gbps" + "Site-to-Site VPN" → SAI (max 1.25 Gbps)
