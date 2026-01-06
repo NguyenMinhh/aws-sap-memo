@@ -20,15 +20,22 @@
 　・Remote user, laptop, individual access, secure access, client-based
 
 ## Site-to-Site VPN
-　・1 (hoặc nhiều) on-prem ↔ 1 VPC
+　・Kết nội 1 (hoặc nhiều) on-prem ↔ AWS
+ 
+　・Với VGW: 1 VPC only
+ 
+　・Với TGW: nhiều VPCs (hub-and-spoke) (multi region)
 
 　・Kết nối on-prem vào AWS, KHÔNG phải để các site nói chuyện với nhau
+ 
+         nếu cần branch-to-branch → dùng VPN CloudHub
+         * branch-to-branch = các chi nhánh (branch offices) kết nối và giao tiếp trực tiếp với NHAU
  
 **【KEYWORDS】**
 
 　・temporary, low cost, quick setup
  
-　・single site, hybrid connectivity
+　・hybrid connectivity, on-prem to AWS
 
         VPN CloudHub (đây một tính năng của Site-to-Site VPN, không phải service riêng biệt)
         ・NHIỀU on-prem sites ↔ AWS (làm HUB)
