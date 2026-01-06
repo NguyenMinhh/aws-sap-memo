@@ -274,12 +274,12 @@ On-prem / User cần kết nối AWS?
         |  simple hybrid          |  multi VPC                |  multi-region
         |                         |  single region            |  scale, reuse DX
         |                         |                           |
-   Private VIF              Private VIF                  Transit VIF
+   Private VIF              Transit VIF                  Transit VIF
         |                         |                           |
         |  [NOTE]                 |  [NOTE]                   |  [NOTE]
         |  - BGP routing          |  - Central routing        |  - Cross-region
         |                         |                           |
-       VGW                Direct Connect Gateway        Direct Connect Gateway
+       VGW             ＊📌Direct Connect Gateway＊     　　Direct Connect Gateway
         |                         |                           |
         |  [NOTE]                 |  [NOTE]                   |  [NOTE]
         |  - 1 VPC only           |  - Hub network            |  - Global DX hub
@@ -303,6 +303,14 @@ On-prem / User cần kết nối AWS?
                                                     (multi-account / multi-region)
 
 ```
+***＊📌Direct Connect Gateway＊***
+
+　　(Phổ biến trong SAP) DX → Transit VIF → TGW
+   
+　　(Cũng hợp lệ)       DX → Transit VIF → DX Gateway → TGW
+   
+   📌 DX Gateway không bắt buộc cho single-region; bắt buộc cho multi-region.
+   
 ## 🚀 Answer-Selection Checklist:
 Bước 1: Đọc câu hỏi → Scan keywords
 + "remote user" → Client VPN
