@@ -20,11 +20,11 @@
 　・Remote user, laptop, individual access, secure access, client-based
 
 ## Site-to-Site VPN
-　・Kết nội 1 (hoặc nhiều) on-prem ↔ AWS
+　・Kết nối 1 (hoặc nhiều) on-prem ↔ AWS
  
-　・Với VGW: 1 VPC only
+　・***Với VGW: 1 VPC only***
  
-　・Với TGW: nhiều VPCs (hub-and-spoke) (multi region)
+　・***Với TGW: nhiều VPCs (hub-and-spoke) (multi region)***
 
 　・Kết nối on-prem vào AWS, KHÔNG phải để các site nói chuyện với nhau
  
