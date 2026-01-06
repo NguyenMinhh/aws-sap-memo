@@ -310,6 +310,7 @@ On-prem / User cần kết nối AWS?
 　　(Cũng hợp lệ)       DX → Transit VIF → DX Gateway → TGW
    
    📌 DX Gateway không bắt buộc cho single-region; bắt buộc cho multi-region.
+   📌 Transit VIF không đồng nghĩa “luôn có DXGW”. (single-region có thể không cần)
    
 ## 🚀 Answer-Selection Checklist:
 Bước 1: Đọc câu hỏi → Scan keywords
@@ -328,5 +329,5 @@ Bước 2: Check số lượng (sites/VPCs/regions)
 
 Bước 3: Loại trừ đáp án sai
 + "Transitive routing" + "VPC Peering" → SAI
-+ "Multi-region" + "DX Gateway + VGW" → SAI (same region only)
++ "Multi-region reuse" + "NO DX Gateway" → SAI (Multi-region mà không có DX Gateway là sai)
 + "> 2 Gbps" + "Site-to-Site VPN" → SAI (max 1.25 Gbps)
