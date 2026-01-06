@@ -1,3 +1,3 @@
 # AWS SAP
 ## 📂 Modules
-1. [Hybrid](docs/hybrid.md)
+1. [Hybrid Network](docs/hybrid-network.md)
