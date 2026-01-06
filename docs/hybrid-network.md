@@ -55,6 +55,14 @@
  
 　・👉 DX connection dùng cho ***geographic diversity / local access*** → SECOND REGION
 
+## TRANSITIVE ROUTING – SAP TRAP
+
+　・VPC Peering: ❌ KHÔNG transitive
+ 
+　・Site-to-Site VPN (VGW): ❌ KHÔNG transitive giữa VPCs
+ 
+　・Transit Gateway: ✅ CÓ transitive routing
+
 ## Hybrid Network Decision Tree
 ```
 On-prem / User cần kết nối AWS?
