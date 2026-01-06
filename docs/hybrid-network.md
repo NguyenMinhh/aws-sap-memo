@@ -203,8 +203,8 @@ On-prem / User cần kết nối AWS?
                  |
         +-------------------------+---------------------------+
         |                         |                           |
-     1 VPC                  Nhiều VPC                    Nhiều VPC
-     1 Region               1 Region                    Nhiều Region
+     1 VPC                     Nhiều VPC                   Nhiều VPC
+     1 Region                  1 Region                   Nhiều Region
         |                         |                           |
         |  [KEYWORDS]             |  [KEYWORDS]               |  [KEYWORDS]
         |  simple hybrid          |  multi VPC                |  multi-region
