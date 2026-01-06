@@ -49,6 +49,12 @@
         　　・multiple on-prem sites, branch offices
         　　・site-to-site via AWS, hub-and-spoke
 
+　・👉 DX connection dùng cho ***redundancy*** → SAME REGION
+
+         Redundancy = multiple DX connections ở CÙNG location / region
+ 
+　・👉 DX connection dùng cho ***geographic diversity / local access*** → SECOND REGION
+
 ## Hybrid Network Decision Tree
 ```
 On-prem / User cần kết nối AWS?
@@ -190,6 +196,14 @@ On-prem / User cần kết nối AWS?
                  |  compliance, no internet, SLA,
                  |  dedicated private line
                  |
+                 | - Nếu keyword là:
+                 |  "redundancy", "HA", "fault tolerance", "single DX is a risk"
+                 |  → Create NEW DX connection in the SAME REGION
+                 |
+                 | - Nếu keyword là:
+                 |  "local access", "users in another geography",
+                 |  "regional DR", "data residency"
+                 |  → Create DX connection in SECOND REGION
               Direct Connect (DX)
                  |
                  |  [SPECS]
@@ -208,6 +222,8 @@ On-prem / User cần kết nối AWS?
                  |  [VIF TYPES]
                  |  - Private VIF: Access VPC
                  |  - Transit VIF: Access via DX Gateway
+                 |    ※DX Gateway cho phép 1 DX connection + Kết nối MULTI VPC + MULTI REGION
+                 |    ※Multi-region access KHÔNG cần DX connection ở region thứ 2
                  |  - Public VIF: Access S3, public services
                  |  - BGP required
                  |
@@ -232,7 +248,7 @@ On-prem / User cần kết nối AWS?
         |  [NOTE]                 |  [NOTE]                   |  [NOTE]
         |  - 1 VPC only           |  - Hub network            |  - Global DX hub
         |                         |                           |  [LIMITS]
-        |                         |                           |  - With VGW: Max 10 VPCs, SAME REGION ONLY ⚠️
+        |                         |                           |  - With VGW: Max 10 VPCs, CROSS-REGION OK ✅
         |                         |                           |  - With TGW: Max 3 TGWs, CROSS-REGION OK ✅
         |                         |                           |
        VPC                Multiple VPCs               Transit Gateway (TGW)
