@@ -1,3 +1,13 @@
+## VPC Peering (Not for Hybrid - only trong nội bộ AWS)
+
+・VPC-to-VPC connection (không phải hybrid networking)
+
+・KHÔNG transitive → dùng Transit Gateway thay thế
+
+【KEYWORDS】
+
+・NOT transitive, NOT scalable, peer-to-peer only
+
 ## Client VPN
 　・VPN cho người dùng cá nhân (user / laptop) kết nối an toàn vào AWS
         
@@ -21,7 +31,8 @@
         VPN CloudHub (đây một tính năng của Site-to-Site VPN, không phải service riêng biệt)
         ・NHIỀU on-prem sites ↔ AWS (làm HUB)
         ・Các chi nhánh nói chuyện với nhau THÔNG QUA AWS
-        ・AWS KHÔNG phải đích đến, chỉ là trung tâm trung chuyển
+        ・AWS vừa là trung tâm trung chuyển (hub) VÀ có thể là đích đến (VPC)
+        ・Sites CÓ THỂ: (1) nói chuyện với nhau, (2) truy cập VPC resources
         【KEYWORDS】
         　　・multiple on-prem sites, branch offices
         　　・site-to-site via AWS, hub-and-spoke
@@ -208,6 +219,9 @@ On-prem / User cần kết nối AWS?
         |                         |                           |
         |  [NOTE]                 |  [NOTE]                   |  [NOTE]
         |  - 1 VPC only           |  - Hub network            |  - Global DX hub
+        |                         |                           |  [LIMITS]
+        |                         |                           |  - With VGW: Max 10 VPCs, SAME REGION ONLY ⚠️
+        |                         |                           |  - With TGW: Max 3 TGWs, CROSS-REGION OK ✅
         |                         |                           |
        VPC                Multiple VPCs               Transit Gateway (TGW)
                                                               |
