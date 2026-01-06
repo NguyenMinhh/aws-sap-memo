@@ -26,9 +26,9 @@
  
 　・***Với TGW: nhiều VPCs (hub-and-spoke) (multi region)***
 
-　・Kết nối on-prem vào AWS, KHÔNG phải để các site nói chuyện với nhau
+　・Mặc định: kết nối on-prem vào AWS (KHÔNG hỗ trợ site-to-site / branch-to-branch)
  
-         nếu cần branch-to-branch → dùng VPN CloudHub
+         TUY NHIÊN, nếu cần branch-to-branch → dùng VPN CloudHub
          * branch-to-branch = các chi nhánh (branch offices) kết nối và giao tiếp trực tiếp với NHAU
          - 1 VPC, đơn giản: VGW
          - 1 VPC, nhiều on-prem, muốn scale: TGW
