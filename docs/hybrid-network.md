@@ -30,6 +30,9 @@
  
          nếu cần branch-to-branch → dùng VPN CloudHub
          * branch-to-branch = các chi nhánh (branch offices) kết nối và giao tiếp trực tiếp với NHAU
+         - 1 VPC, đơn giản: VGW
+         - 1 VPC, nhiều on-prem, muốn scale: TGW
+         - Nhiều VPC: TGW
  
 **【KEYWORDS】**
 
