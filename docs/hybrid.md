@@ -78,12 +78,12 @@ On-prem cần kết nối AWS?
    Private VIF              Private VIF                  Transit VIF
         |                         |                           |
         |  [NOTE]                 |  [NOTE]                   |  [NOTE]
-        |  - BGP routing           |  - Central routing         |  - Cross-region
+        |  - BGP routing          |  - Central routing        |  - Cross-region
         |                         |                           |
        VGW                Transit Gateway (TGW)        Direct Connect Gateway
         |                         |                           |
         |  [NOTE]                 |  [NOTE]                   |  [NOTE]
-        |  - 1 VPC only            |  - Hub network             |  - Global DX hub
+        |  - 1 VPC only           |  - Hub network            |  - Global DX hub
         |                         |                           |
        VPC                Multiple VPCs               Transit Gateway (TGW)
                                                               |
