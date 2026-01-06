@@ -63,6 +63,34 @@
  
 　・Transit Gateway: ✅ CÓ transitive routing
 
+## VGW vs TGW MEMO:
+
+　🔹 1 VPC → đừng nghĩ TGW
+ 
+　🔹 Nhiều VPC → đừng nghĩ VGW
+ 
+　1️⃣ Có more than 1 VPC không? → YES → TGW
+
+　2️⃣ Có transitive routing / hub-and-spoke không? → YES → TGW
+
+　3️⃣ Chỉ nói connect on-prem to a single VPC? → VGW
+
+ 📌 Keyword SAP đi kèm VGW
+        
+        single VPC
+        simple hybrid connectivity
+        on-premises to one VPC
+        basic architecture
+
+ 📌 Keyword SAP đi kèm TGW
+
+        multiple VPCs
+        shared services
+        centralized connectivity
+        hub-and-spoke
+        transitive routing
+        multi-account
+
 ## Hybrid Network Decision Tree
 ```
 On-prem / User cần kết nối AWS?
