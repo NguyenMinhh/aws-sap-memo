@@ -287,10 +287,17 @@ On-prem / User cần kết nối AWS?
         |                         |                           |  - With VGW: Max 10 VPCs, CROSS-REGION OK ✅
         |                         |                           |  - With TGW: Max 3 TGWs, CROSS-REGION OK ✅
         |                         |                           |
-       VPC                Multiple VPCs               Transit Gateway (TGW)
+       VPC                Multiple VPCs                       |
+                                                              +-----------------------------------+
+                                                              |                                   |
+                                                              |  [WHEN]                           | [WHEN]
+                                                              |  - Many VPCs                      | - Few VPCs
+                                                              |  - Multi-account                  | - Không cần VPC 
+                                                              |  - Hub-and-spoke                  | nói chuyện với nhau
+                                                              |  - Transitive routing             | - Kết nối on-prem ↔ từng VPC độc lập
+                                                              |  - SHARED SERVICES                |
+                                                    Transit Gateway (TGW)                Virtual Private Gateway (VGW)
                                                               |
-                                                              |  [NOTE]
-                                                              |  - Hub-and-spoke
                                                               |
                                                         Multiple VPCs
                                                     (multi-account / multi-region)
