@@ -279,12 +279,12 @@ On-prem / User cần kết nối AWS?
         |  [NOTE]                 |  [NOTE]                   |  [NOTE]
         |  - BGP routing          |  - Central routing        |  - Cross-region
         |                         |                           |
-       VGW                Transit Gateway (TGW)        Direct Connect Gateway
+       VGW                Direct Connect Gateway        Direct Connect Gateway
         |                         |                           |
         |  [NOTE]                 |  [NOTE]                   |  [NOTE]
         |  - 1 VPC only           |  - Hub network            |  - Global DX hub
         |                         |                           |  [LIMITS]
-        |                         |                           |  - With VGW: Max 10 VPCs, CROSS-REGION OK ✅
+        |                 Transit Gateway (TGW)               |  - With VGW: Max 10 VPCs, CROSS-REGION OK ✅
         |                         |                           |  - With TGW: Max 3 TGWs, CROSS-REGION OK ✅
         |                         |                           |
        VPC                Multiple VPCs                       |
