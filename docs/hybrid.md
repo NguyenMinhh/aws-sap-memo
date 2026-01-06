@@ -1,27 +1,37 @@
-**Client VPN**
-[KEYWORDS] 
-・User / laptop / remote access
-・remote user, laptop, individual access, secure access, client-based
-[NOTE]
-・VPN cho người dùng cá nhân (user / laptop) kết nối an toàn vào AWS
+## Client VPN
+　・VPN cho người dùng cá nhân (user / laptop) kết nối an toàn vào AWS
+        
+**【KEYWORDS】**
 
-**Site-to-Site VPN**
-[KEYWORDS] 
-・temporary, low cost, quick setup
-・single site, hybrid connectivity,
-[NOTE] 
-・1 on-prem ↔ 1 VPC
-・Kết nối on-prem vào AWS, KHÔNG phải để các site nói chuyện với nhau
+　・User / laptop / remote access <p>
+         
+　・Remote user, laptop, individual access, secure access, client-based
 
-**VPN CloudHub**
-[KEYWORDS]
-・multiple on-prem sites, branch offices,
-・site-to-site via AWS, hub-and-spoke
-[NOTE]
-・NHIỀU on-prem sites ↔ AWS (làm HUB)
-・Các chi nhánh nói chuyện với nhau THÔNG QUA AWS
-・AWS KHÔNG phải đích đến, chỉ là trung tâm trung chuyển
+## Site-to-Site VPN
+　・1 on-prem ↔ 1 VPC
 
+　・Kết nối on-prem vào AWS, KHÔNG phải để các site nói chuyện với nhau
+ 
+**【KEYWORDS】**
+
+　・temporary, low cost, quick setup
+ 
+　・single site, hybrid connectivity
+
+## VPN CloudHub
+　・NHIỀU on-prem sites ↔ AWS (làm HUB)
+
+　・Các chi nhánh nói chuyện với nhau THÔNG QUA AWS
+
+　・AWS KHÔNG phải đích đến, chỉ là trung tâm trung chuyển
+ 
+**【KEYWORDS】**
+
+　・multiple on-prem sites, branch offices
+ 
+　・site-to-site via AWS, hub-and-spoke
+
+## Hybrid Network Decision Tree
 ```
 On-prem cần kết nối AWS?
         |
