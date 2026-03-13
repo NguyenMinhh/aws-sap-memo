@@ -239,18 +239,23 @@
 
 1) **Dev team tạo role quá rộng gây rủi ro, nhưng vẫn cần self-service nhanh.**
 - **Hướng đáp án:** permission boundary bắt buộc + SCP deny privilege escalation actions.
+  **Mô tả nhanh:** cho dev tự tạo role nhưng không thể tự nâng quyền lên admin toàn account.
 
 2) **Security yêu cầu mọi account không được tắt CloudTrail/Config.**
 - **Hướng đáp án:** org-level services + SCP explicit deny `StopLogging/DeleteTrail/StopConfigurationRecorder`.
+  **Mô tả nhanh:** dù team app có quyền cao, vẫn không ai được tắt hệ thống audit bắt buộc.
 
 3) **Third-party SaaS cần vào account để scan, nhưng phải an toàn.**
 - **Hướng đáp án:** cross-account role + external ID + least privilege + CloudTrail monitoring.
+  **Ví dụ:** cho vendor chỉ quyền read/security-scan cần thiết, mọi lần assume role đều có log để truy vết.
 
 4) **App cross-account bị AccessDenied dù IAM đã Allow.**
 - **Hướng đáp án:** kiểm tra SCP, permission boundary, resource policy (đặc biệt KMS/S3).
+  **Mô tả nhanh:** IAM `Allow` chưa đủ; thiếu key policy KMS hoặc bucket policy S3 vẫn AccessDenied.
 
 5) **Muốn buộc workload chỉ deploy ở approved regions.**
 - **Hướng đáp án:** SCP deny theo `aws:RequestedRegion` + exception role rõ ràng.
+  **Ví dụ:** chỉ cho deploy ở `ap-southeast-1`; nếu cần region khác phải qua role ngoại lệ có approval.
 
 ---
 
